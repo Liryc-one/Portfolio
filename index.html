@@ -21,7 +21,10 @@
       <a href="#contact" class="hover:text-white transition">Contact</a>
     </div>
   </nav>  <section id="hero" class="h-screen flex items-center justify-center text-center">
-    <div>
+   <section id="about" class="fade-in py-20 px-6">...</section>
+<section id="projects" class="fade-in py-20 px-6">...</section> 
+    
+  <div>
       <h1 class="text-4xl sm:text-6xl mb-4" id="typewriter"></h1>
       <p class="text-lg text-green-300">Crafting code with creativity & purpose.</p>
     </div>
@@ -54,5 +57,19 @@
     </form>
   </section>  <footer class="text-center py-6 border-t border-green-600 text-sm">
     Coded with ❤️ by Liryc. Powered by open source.
-  </footer>  <script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/typeit.min.js"></script>  <script src="script.js"></script></body>
+  </footer>  <script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/typeit.min.js"></script>  <script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+  particlesJS("hero", {
+    particles: {
+      number: { value: 80 },
+      color: { value: "#00ff88" },
+      shape: { type: "circle" },
+      opacity: { value: 0.3 },
+      size: { value: 2 },
+      move: { enable: true, speed: 1 }
+    }
+  });
+</script>
+</body>
 </html>
