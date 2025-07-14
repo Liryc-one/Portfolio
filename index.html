@@ -1,70 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Personal portfolio website of Your Name — frontend developer, designer, and web enthusiast.">
-  <meta name="keywords" content="Portfolio, Web Developer, Frontend, JavaScript, HTML, CSS">
-  <meta name="author" content="Your Name">
-  <title>Cyril.io</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script defer src="script.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Liryc's immersive hacker-style portfolio with coding animations and interactive UI." />
+  <meta name="author" content="Liryc" />
+  <meta property="og:title" content="Liryc — Hacker Portfolio" />
+  <meta property="og:description" content="Explore Liryc's dark-themed, interactive developer portfolio." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://liryc-one.github.io/Portfolio" />  <title>Liryc | Developer Portfolio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-
-  <nav id="navbar">
-    <div class="logo">Cyril</div>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><button id="theme-toggle">🌙</button></li>
-    </ul>
-  </nav>
-
-  <header id="hero">
-    <div class="hero-content">
-      <h1 class="fade-in">Hey, I'm <span>Cyril-Elvis</span>.</h1>
-      <p class="slide-up">I'm a frontend developer building modern web experiences.</p>
-      <a href="#projects" class="btn zoom-in">View Projects</a>
+<body class="bg-black text-green-400 font-mono">
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-90 backdrop-blur-md border-b border-green-500 p-4 flex justify-between items-center">
+    <span class="text-xl font-bold">&lt;Liryc/&gt;</span>
+    <div class="space-x-4 text-sm">
+      <a href="#about" class="hover:text-white transition">About</a>
+      <a href="#projects" class="hover:text-white transition">Projects</a>
+      <a href="#contact" class="hover:text-white transition">Contact</a>
     </div>
-  </header>
-
-  <section id="about">
-    <h2 class="fade-in">About Me</h2>
-    <p class="slide-up">I’m a developer based in Abuja, Nigeria passionate about design and building seamless user interfaces.</p>
-  </section>
-
-  <section id="projects">
-    <h2 class="fade-in">Selected Projects</h2>
-    <div class="project-grid">
-      <div class="project-card fade-in">
-        <img src="https://via.placeholder.com/400x250" alt="Project One">
-        <h3>Project One</h3>
-        <p>Description of project one.</p>
-        <a href="#" target="_blank">View Live</a>
+  </nav>  <section id="hero" class="h-screen flex items-center justify-center text-center">
+    <div>
+      <h1 class="text-4xl sm:text-6xl mb-4" id="typewriter"></h1>
+      <p class="text-lg text-green-300">Crafting code with creativity & purpose.</p>
+    </div>
+  </section>  <section id="about" class="py-20 px-6 max-w-4xl mx-auto">
+    <h2 class="text-3xl border-b border-green-400 pb-2 mb-6">[ About Me ]</h2>
+    <p class="text-green-300 leading-relaxed">
+      I am a passionate developer with an eye for sleek design and functional software. Whether it's frontend architecture or blockchain-based innovation, I create systems that speak fluently in code.
+    </p>
+  </section>  <section id="projects" class="py-20 px-6 max-w-5xl mx-auto">
+    <h2 class="text-3xl border-b border-green-400 pb-2 mb-6">[ Projects ]</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-gray-900 p-6 rounded-lg border border-green-400 hover:shadow-xl transition duration-300">
+        <h3 class="text-xl mb-2">Di-vidend</h3>
+        <p class="text-sm mb-4 text-green-300">DeFi savings app built on SUI blockchain with real-time yield tracking.</p>
+        <a href="#" class="text-green-500 hover:underline">View Project →</a>
       </div>
-      <div class="project-card fade-in">
-        <img src="https://via.placeholder.com/400x250" alt="Project Two">
-        <h3>Project Two</h3>
-        <p>Description of project two.</p>
-        <a href="#" target="_blank">Source Code</a>
+      <div class="bg-gray-900 p-6 rounded-lg border border-green-400 hover:shadow-xl transition duration-300">
+        <h3 class="text-xl mb-2">Terminal Portfolio</h3>
+        <p class="text-sm mb-4 text-green-300">A terminal-style personal portfolio powered by HTML, Tailwind, and JS.</p>
+        <a href="#" class="text-green-500 hover:underline">View Project →</a>
       </div>
     </div>
-  </section>
-
-  <section id="contact">
-    <h2 class="fade-in">Get in Touch</h2>
-    <form id="contact-form" action="https://example.com/submit" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
+  </section>  <section id="contact" class="py-20 px-6 max-w-2xl mx-auto">
+    <h2 class="text-3xl border-b border-green-400 pb-2 mb-6">[ Contact Me ]</h2>
+    <form class="flex flex-col space-y-4" name="contact">
+      <input type="text" name="name" placeholder="Your Name" class="bg-black border border-green-500 p-2" required>
+      <input type="email" name="email" placeholder="Your Email" class="bg-black border border-green-500 p-2" required>
+      <textarea name="message" rows="5" placeholder="Your Message" class="bg-black border border-green-500 p-2" required></textarea>
+      <button type="submit" class="bg-green-500 text-black px-4 py-2 font-bold">Send</button>
     </form>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Cyril . All rights reserved.</p>
-  </footer>
-</body>
+  </section>  <footer class="text-center py-6 border-t border-green-600 text-sm">
+    Coded with ❤️ by Liryc. Powered by open source.
+  </footer>  <script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/typeit.min.js"></script>  <script src="script.js"></script></body>
 </html>
