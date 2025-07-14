@@ -27,4 +27,20 @@ button:hover { background: #00ff88; transform: scale(1.05); }
 .grid { grid-template-columns: 1fr !important; } }
 
 @media (prefers-color-scheme: dark) { body { background-color: #000; color: #00ff88; } }
+/* Add to styles.css */
 
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.glow-text {
+  color: #00ff88;
+  text-shadow: 0 0 5px #00ff88, 0 0 10px #00ff88, 0 0 15px #00ff88;
+}
