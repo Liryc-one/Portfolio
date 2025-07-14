@@ -1,14 +1,9 @@
-// Theme Toggle const toggleButton = document.getElementById("theme-toggle"); const body = document.body;
+// script.js
 
-// Load theme preference if (localStorage.getItem("theme") === "dark") { body.classList.add("dark-mode"); }
+// Typing effect for hero section document.addEventListener("DOMContentLoaded", function () { new TypeIt("#typewriter", { speed: 50, loop: true, waitUntilVisible: true, }) .type("Hi, I'm Liryc.", { delay: 600 }) .break() .type("Web Developer | Blockchain Builder", { delay: 1000 }) .delete(null, { delay: 1500 }) .go(); });
 
-toggleButton.addEventListener("click", () => { body.classList.toggle("dark-mode"); const theme = body.classList.contains("dark-mode") ? "dark" : "light"; localStorage.setItem("theme", theme); });
+// Optional: Scroll fade-in animation const fadeIns = document.querySelectorAll('.fade-in'); const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('animate-fade-in'); } }); }, { threshold: 0.1 });
 
-// Trigger animations when visible const faders = document.querySelectorAll(".fade-in, .slide-up, .zoom-in");
+fadeIns.forEach(el => observer.observe(el));
 
-const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
-
-const appearOnScroll = new IntersectionObserver((entries, observer) => { entries.forEach(entry => { if (!entry.isIntersecting) return; entry.target.classList.add("appear"); observer.unobserve(entry.target); }); }, appearOptions);
-
-faders.forEach(fader => { appearOnScroll.observe(fader); });
-
+// Optional: Dark mode toggle (expand if needed) // const toggle = document.getElementById('darkmode-toggle'); // toggle.addEventListener('click', () => { //   document.body.classList.toggle('dark-mode'); // });
