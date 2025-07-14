@@ -7,3 +7,17 @@
 fadeIns.forEach(el => observer.observe(el));
 
 // Optional: Dark mode toggle (expand if needed) // const toggle = document.getElementById('darkmode-toggle'); // toggle.addEventListener('click', () => { //   document.body.classList.toggle('dark-mode'); // });
+// Reveal fade-in elements on scroll
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target); // Only run once
+      }
+    });
+  },
+  { threshold: 0.1 }
+);
+
+document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
