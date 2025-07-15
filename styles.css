@@ -92,3 +92,36 @@ a:hover { text-decoration: underline; }
 .resume-download a:hover {
   background-color: #00e6b8;
 }
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+  background: #1c1c1c;
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 500px;
+  color: #e0e0e0;
+  border-left: 4px solid #00ffcc;
+}
+
+.modal .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
