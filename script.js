@@ -9,3 +9,8 @@ heroText.textContent = ""; // Clear initially type(); });
 // === Reveal on Scroll === const sections = document.querySelectorAll('section'); const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); } }); }, { threshold: 0.1 });
 
 sections.forEach(section => { section.classList.add('hidden'); observer.observe(section); });
+
+// === Project Modal === document.querySelectorAll('.project').forEach(project => { project.addEventListener('click', () => { const modal = project.querySelector('.modal'); if (modal) { modal.classList.add('show'); } }); });
+
+document.querySelectorAll('.modal .close').forEach(btn => { btn.addEventListener('click', (e) => { e.stopPropagation(); btn.closest('.modal').classList.remove('show'); }); });
+
