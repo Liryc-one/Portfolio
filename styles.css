@@ -125,3 +125,29 @@ a:hover { text-decoration: underline; }
   color: #fff;
   cursor: pointer;
 }
+/* === Stats Section === */
+#stats {
+  margin-top: 60px;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.stats-grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  color: #00ffcc;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.stat p {
+  margin-top: 10px;
+  color: #aaa;
+}
