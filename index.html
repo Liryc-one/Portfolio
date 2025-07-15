@@ -1,62 +1,69 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cyril | Terminal Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cyril's Developer Portfolio</title>
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
-  <style>
-    @keyframes blink {
-      0% { opacity: 1; }
-      50% { opacity: 0; }
-      100% { opacity: 1; }
-    }
-    .cursor {
-      display: inline-block;
-      width: 10px;
-      background-color: #00ff00;
-      margin-left: 3px;
-      animation: blink 1s step-start infinite;
-    }
-    .fade-in {
-      animation: fadeIn 0.8s ease-in;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(5px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
 </head>
 <body>
-  <div class="terminal">
-    <div id="boot-sequence" class="fade-in">
-      <pre>
-   _____                 _             _ 
-  |_   _|               | |           | |
-    | |  _ __  _ __ ___ | |_ __ _  ___| |_
-    | | | '_ \| '__/ _ \| __/ _` |/ __| __|
-   _| |_| | | | | | (_) | || (_| | (__| |_ 
-  |_____|_| |_|_|  \___/ \__\__,_|\___|\__|Welcome to Cyril's Hacker Portfolio v1.0.0
+  <header>
+    <h1>&lt;Cyril.Dev /&gt;</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-Loading modules...
-  Boot complete.
-  Type 'help' to view available commands
+  <main>
+    <section class="hero">
+      <h2>Hello, I'm Cyril</h2>
+      <p>A developer who turns ideas into code.</p>
+    </section>
 
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I'm passionate about building scalable Web3 products, designing intuitive interfaces, and learning new tech stacks.</p>
+    </section>
 
----
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul class="skills-list">
+        <li>JavaScript</li>
+        <li>Solidity</li>
+        <li>React</li>
+        <li>Node.js</li>
+        <li>Move / Sui</li>
+      </ul>
+    </section>
 
-Available Commands: help             Show available commands about            Display about info skills           Show skillset projects         List projects certifications   List certifications blog             View recent logs contact          Show contact info stats            Show personal stats clear            Clear the screen
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project">
+        <h3>MovieBot</h3>
+        <p>An AI-powered movie recommender with custom GPT integration.</p>
+      </div>
+      <div class="project">
+        <h3>Di-vidend</h3>
+        <p>A DeFi savings and yield-tracking platform on the Sui blockchain.</p>
+      </div>
+    </section>
 
-</pre>
-</div>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href=\"mailto:cyril.codes@pm.me\">cyril.codes@pm.me</a></p>
+      <p>GitHub: <a href=\"https://github.com/Liryc-one\" target=\"_blank\">Liryc-one</a></p>
+    </section>
+  </main>
 
-<div id="terminal-output" class="fade-in"></div>
+  <footer>
+    <p>&copy; 2025 Cyril. Built with &lt;/&gt; and ☕</p>
+  </footer>
 
-<div class="input-line fade-in">
-  <span class="prompt">$</span>
-  <input type="text" id="command-input" autofocus autocomplete="off" spellcheck="false">
-  <span class="cursor"></span>
-</div>
-
-  </div>  <script src="script.js"></script></body>
+  <script src=\"script.js\"></script>
+</body>
 </html>
