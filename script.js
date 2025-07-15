@@ -35,3 +35,5 @@ const statsSection = document.querySelector('#stats'); if (statsSection) { const
 
 statsObserver.observe(statsSection); }
 
+// === Page Loader === window.addEventListener('load', () => { const loader = document.querySelector('.loader-wrapper'); if (loader) { loader.classList.add('fade-out'); setTimeout(() => loader.remove(), 1000); } });
+
