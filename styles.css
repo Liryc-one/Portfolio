@@ -53,3 +53,42 @@ a:hover { text-decoration: underline; }
   opacity: 1;
   transform: translateY(0);
 }
+/* === Timeline Section === */
+.timeline {
+  position: relative;
+  padding-left: 20px;
+  border-left: 3px solid #00ffcc;
+}
+
+.timeline-item {
+  margin-bottom: 30px;
+  padding-left: 10px;
+}
+
+.timeline-date {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.timeline-item h3 {
+  margin: 5px 0;
+  color: #88f1f1;
+}
+
+.resume-download {
+  margin-top: 20px;
+}
+
+.resume-download a {
+  background-color: #00ffcc;
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.resume-download a:hover {
+  background-color: #00e6b8;
+}
