@@ -1,42 +1,11 @@
-const terminalOutput = document.getElementById('terminal-output'); const commandInput = document.getElementById('command-input');
+// === Typing Effect in Hero Section === window.addEventListener('DOMContentLoaded', () => { const heroText = document.querySelector('.hero h2'); const message = "Hello, I'm Cyril"; let index = 0;
 
-const commands = { help: Available commands:\n  - help\n  - about\n  - skills\n  - projects\n  - certifications\n  - blog\n  - contact\n  - stats\n  - clear,
+function type() { if (index < message.length) { heroText.textContent += message.charAt(index); index++; setTimeout(type, 100); } }
 
-about: I'm Cyril, a blockchain developer and smart contract engineer. I specialize in DeFi, NFTs, and full-stack development using technologies like Move, Solidity, Sui, React, and Node.js.,
+heroText.textContent = ""; // Clear initially type(); });
 
-skills: Tech Stack:\n  - JavaScript, Solidity, Move\n  - React, Node.js, Firebase\n  - Git, MongoDB, TailwindCSS,
+// === Smooth Scroll for Navigation === document.querySelectorAll('nav a[href^="#"]').forEach(anchor => { anchor.addEventListener('click', function (e) { e.preventDefault(); const target = document.querySelector(this.getAttribute('href')); if (target) { window.scrollTo({ top: target.offsetTop - 50, behavior: 'smooth' }); } }); });
 
-projects: ~/portfolio\n  ├── ai-moviebot\n  ├── dividend-app\n  └── hacker-portfolio,
+// === Reveal on Scroll === const sections = document.querySelectorAll('section'); const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); } }); }, { threshold: 0.1 });
 
-certifications: [✓] Certified Solidity Developer - ChainLearn, 2025\n[✓] Web3 Smart Contract Expert - DevDAO Academy,
-
-blog: > July 2025 | Debugged a major Web3 minting flow.\n> June 2025 | Launched AI-integrated MovieBot using GPT APIs.,
-
-contact: Email: cyril.codes@pm.me\nGitHub: https://github.com/Liryc-one,
-
-stats: > Projects Completed: ██████████░░ 90%\n> Bugs Fixed: ████████████░░ 95%\n> Hackathons Attended: █████░░ 60%,
-
-clear: 'CLEAR_SCREEN' };
-
-function appendOutput(text, className = '') { const line = document.createElement('div'); if (className) line.classList.add(className); line.textContent = text; terminalOutput.appendChild(line); }
-
-commandInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') { const input = commandInput.value.trim(); if (input === '') return;
-
-appendOutput(`$ ${input}`, 'fade-in');
-
-if (commands[input]) {
-  if (commands[input] === 'CLEAR_SCREEN') {
-    terminalOutput.innerHTML = '';
-  } else {
-    commands[input].split('\n').forEach(line => appendOutput(line, 'fade-in'));
-  }
-} else {
-  appendOutput(`Command not found: ${input}`, 'fade-in');
-}
-
-commandInput.value = '';
-terminalOutput.scrollTop = terminalOutput.scrollHeight;
-
-} });
-
-  
+sections.forEach(section => { section.classList.add('hidden'); observer.observe(section); });
