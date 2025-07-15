@@ -1,1 +1,29 @@
+body { margin: 0; padding: 0; background-color: #000; color: #00ff00; font-family: 'Fira Code', monospace; height: 100vh; display: flex; justify-content: center; align-items: center; }
+
+.terminal { width: 90%; max-width: 800px; background-color: #111; padding: 20px; border-radius: 10px; box-shadow: 0 0 20px #0f0; overflow-y: auto; max-height: 90vh; line-height: 1.4; }
+
+#boot-sequence pre { color: #00ff00; white-space: pre-wrap; font-size: 14px; margin-bottom: 20px; }
+
+#terminal-output { margin-bottom: 10px; white-space: pre-wrap; font-size: 14px; min-height: 100px; }
+
+.input-line { display: flex; align-items: center; font-size: 14px; }
+
+.prompt { color: #00ff00; margin-right: 10px; }
+
+#command-input { background: transparent; border: none; outline: none; color: #00ff00; font-family: 'Fira Code', monospace; font-size: 14px; width: 100%; }
+
+.cursor { display: inline-block; width: 10px; height: 1em; background-color: #00ff00; margin-left: 3px; animation: blink 1s step-start infinite; }
+
+@keyframes blink { 0% { opacity: 1; } 50% { opacity: 0; } 100% { opacity: 1; } }
+
+.fade-in { animation: fadeIn 0.8s ease-in; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+
+::-webkit-scrollbar { width: 8px; }
+
+::-webkit-scrollbar-thumb { background-color: #00ff00; }
+
+::-webkit-scrollbar-track { background-color: #111; }
+
 
