@@ -4,6 +4,33 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* Fullscreen loader */
+#loader {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0e0e0e;
+  color: #00ff99;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+}
+
+/* Typing text style */
+.typing-text::after {
+  content: '|';
+  animation: blink 0.7s infinite;
+}
+
+/* Blinking cursor effect */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
 
 html, body {
   width: 100%;
