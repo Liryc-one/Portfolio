@@ -38,7 +38,7 @@ statsObserver.observe(statsSection); }
 // === Page Loader === window.addEventListener('load', () => { const loader = document.querySelector('.loader-wrapper'); if (loader) { loader.classList.add('fade-out'); setTimeout(() => loader.remove(), 1000); } });
 
 window.addEventListener('DOMContentLoaded', () => {
-  const text = "Loading your experience...";
+  const text = " Who Is Cyril ...";
   const typingTarget = document.getElementById('typing-text');
   const loader = document.getElementById('loader');
   const content = document.getElementById('main-content');
