@@ -37,3 +37,30 @@ statsObserver.observe(statsSection); }
 
 // === Page Loader === window.addEventListener('load', () => { const loader = document.querySelector('.loader-wrapper'); if (loader) { loader.classList.add('fade-out'); setTimeout(() => loader.remove(), 1000); } });
 
+window.addEventListener('DOMContentLoaded', () => {
+  const text = "Loading your experience...";
+  const typingTarget = document.getElementById('typing-text');
+  const loader = document.getElementById('loader');
+  const content = document.getElementById('main-content');
+
+  let index = 0;
+
+  function type() {
+    if (index < text.length) {
+      typingTarget.textContent += text.charAt(index);
+      index++;
+      setTimeout(type, 100); // typing speed
+    } else {
+      // Wait a bit before fading out the loader
+      setTimeout(() => {
+        loader.style.opacity = 0;
+        setTimeout(() => {
+          loader.style.display = 'none';
+          content.style.display = 'block';
+        }, 500); // match with CSS transition
+      }, 800); // pause after typing
+    }
+  }
+
+  type();
+});
