@@ -1,66 +1,74 @@
-// === Typing Effect in Hero Section === window.addEventListener('DOMContentLoaded', () => { const heroText = document.querySelector('.hero h2'); const message = "Hello, I'm Cyril"; let index = 0;
 
-function type() { if (index < message.length) { heroText.textContent += message.charAt(index); index++; setTimeout(type, 100); } }
+$(document).ready(function(){
+    $(window).scroll(function(){
+        // sticky navbar on scroll script
+        if(this.scrollY > 20){
+            $('.navbar').addClass("sticky");
+        }else{
+            $('.navbar').removeClass("sticky");
+        }
+        
+        // scroll-up button show/hide script
+        if(this.scrollY > 500){
+            $('.scroll-up-btn').addClass("show");
+        }else{
+            $('.scroll-up-btn').removeClass("show");
+        }
+    });
 
-heroText.textContent = ""; type(); });
+    // slide-up script
+    $('.scroll-up-btn').click(function(){
+        $('html').animate({scrollTop: 0});
+        // removing smooth scroll on slide-up button click
+        $('html').css("scrollBehavior", "auto");
+    });
 
-// === Smooth Scroll for Navigation === document.querySelectorAll('nav a[href^="#"]').forEach(anchor => { anchor.addEventListener('click', function (e) { e.preventDefault(); const target = document.querySelector(this.getAttribute('href')); if (target) { window.scrollTo({ top: target.offsetTop - 50, behavior: 'smooth' }); } }); });
+    $('.navbar .menu li a').click(function(){
+        // applying again smooth scroll on menu items click
+        $('html').css("scrollBehavior", "smooth");
+    });
 
-// === Reveal on Scroll === const sections = document.querySelectorAll('section'); const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); } }); }, { threshold: 0.1 });
+    // toggle menu/navbar script
+    $('.menu-btn').click(function(){
+        $('.navbar .menu').toggleClass("active");
+        $('.menu-btn i').toggleClass("active");
+    });
 
-sections.forEach(section => { section.classList.add('hidden'); observer.observe(section); });
+    // typing text animation script
+    var typed = new Typed(".typing", {
+        strings: ["Developer🧑‍💻", "Blockchain enthusiast", "Hooper🏀", "Cybersec researcher👽", "Freelancer"],
+        typeSpeed: 100,
+        backSpeed: 60,
+        loop: true
+    });
 
-// === Project Modal === document.querySelectorAll('.project').forEach(project => { project.addEventListener('click', () => { const modal = project.querySelector('.modal'); if (modal) { modal.classList.add('show'); } }); });
+    var typed = new Typed(".typing-2", {
+        strings: ["Developer🧑‍💻", "Blockchain enthusiast", "Hooper🏀", "Cybersec researcher👽", "Freelancer"],
+        typeSpeed: 100,
+        backSpeed: 60,
+        loop: true
+    });
 
-document.querySelectorAll('.modal .close').forEach(btn => { btn.addEventListener('click', (e) => { e.stopPropagation(); btn.closest('.modal').classList.remove('show'); }); });
-
-// === Dark/Light Mode Toggle === document.addEventListener('DOMContentLoaded', () => { const toggleBtn = document.createElement('button'); toggleBtn.textContent = '🌓 Toggle Theme'; toggleBtn.className = 'theme-toggle'; document.body.appendChild(toggleBtn);
-
-toggleBtn.addEventListener('click', () => { document.body.classList.toggle('light-mode'); }); });
-
-// === Animated Stats Counter === function animateCounters() { const counters = document.querySelectorAll('.stat-number'); counters.forEach(counter => { const target = +counter.getAttribute('data-target'); let current = 0; const step = Math.ceil(target / 100);
-
-const update = () => {
-  current += step;
-  if (current > target) current = target;
-  counter.textContent = current;
-  if (current < target) requestAnimationFrame(update);
-};
-
-update();
-
-}); }
-
-const statsSection = document.querySelector('#stats'); if (statsSection) { const statsObserver = new IntersectionObserver((entries) => { if (entries[0].isIntersecting) { animateCounters(); statsObserver.disconnect(); } }, { threshold: 0.4 });
-
-statsObserver.observe(statsSection); }
-
-// === Page Loader === window.addEventListener('load', () => { const loader = document.querySelector('.loader-wrapper'); if (loader) { loader.classList.add('fade-out'); setTimeout(() => loader.remove(), 1000); } });
-
-window.addEventListener('DOMContentLoaded', () => {
-  const text = " Who Is Cyril ...";
-  const typingTarget = document.getElementById('typing-text');
-  const loader = document.getElementById('loader');
-  const content = document.getElementById('main-content');
-
-  let index = 0;
-
-  function type() {
-    if (index < text.length) {
-      typingTarget.textContent += text.charAt(index);
-      index++;
-      setTimeout(type, 100); // typing speed
-    } else {
-      // Wait a bit before fading out the loader
-      setTimeout(() => {
-        loader.style.opacity = 0;
-        setTimeout(() => {
-          loader.style.display = 'none';
-          content.style.display = 'block';
-        }, 500); // match with CSS transition
-      }, 800); // pause after typing
-    }
-  }
-
-  type();
+    // owl carousel script
+    $('.carousel').owlCarousel({
+        margin: 20,
+        loop: true,
+        autoplay: true,
+        autoplayTimeOut: 2000,
+        autoplayHoverPause: true,
+        responsive: {
+            0:{
+                items: 1,
+                nav: false
+            },
+            600:{
+                items: 2,
+                nav: false
+            },
+            1000:{
+                items: 3,
+                nav: false
+            }
+        }
+    });
 });
